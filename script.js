@@ -1,7 +1,5 @@
 // ---- CONFIG -------------------------------------------------------
-// Deine Discord User-ID (Entwicklermodus an -> Rechtsklick auf deinen
-// Namen -> "ID kopieren"). Wird für das Discord-Widget gebraucht.
-const DISCORD_USER_ID = "REPLACE_WITH_YOUR_DISCORD_ID";
+const DISCORD_USER_ID = "1102693369286774814";
 // ---------------------------------------------------------------------
 
 const yearEl = document.getElementById("year");
