@@ -155,8 +155,15 @@ document.querySelectorAll("[data-reset]").forEach(btn => {
     updateProgress();
   });
 });
+// Beim Laden automatisch Tower auswählen
+const towerTab = document.querySelector('.fit-tab[data-tab="tower"]');
+const towerPanel = document.querySelector('.fit-panel[data-panel="tower"]');
+
+towerTab.classList.add("is-active");
+towerPanel.classList.add("is-active");
 
 updateProgress();
+
 </script>
 </body>
 </html>
