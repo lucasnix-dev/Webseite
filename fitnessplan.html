@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fitnessplan — DEIN NAME</title>
+<title>Fitnessplan — LufasV2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
   <nav class="nav">
     <a href="index.html" class="nav-brand">
       <span class="nav-avatar"><img src="assets/avatar.jpg" alt=""></span>
-      <span class="nav-name">DEIN NAME</span>
+      <span class="nav-name">LufasV2</span>
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -37,7 +37,7 @@
     <section class="section no-border centered" style="padding-top:56px;">
       <p class="section-eyebrow">TOOL</p>
       <h2>Ess- &amp; <span class="grad">Trainingsplan</span></h2>
-      <p class="lead"> Tower-Training und Laufplan zum Abhaken. Dein Fortschritt bleibt in diesem Browser gespeichert.</p>
+      <p class="lead">Tower-Training und Laufplan zum Abhaken. Dein Fortschritt bleibt in diesem Browser gespeichert.</p>
     </section>
 
     <section class="section no-border" style="padding-top:0; max-width:760px; margin:0 auto;">
@@ -155,15 +155,14 @@ document.querySelectorAll("[data-reset]").forEach(btn => {
     updateProgress();
   });
 });
+
 // Beim Laden automatisch Tower auswählen
 const towerTab = document.querySelector('.fit-tab[data-tab="tower"]');
 const towerPanel = document.querySelector('.fit-panel[data-panel="tower"]');
-
 towerTab.classList.add("is-active");
 towerPanel.classList.add("is-active");
 
 updateProgress();
-
 </script>
 </body>
 </html>
