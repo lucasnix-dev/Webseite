@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fitnessplan — DEIN NAME</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-bg">
+  <img class="bg-gif" src="assets/background.gif" alt="" />
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="scrim"></div>
+</div>
+<div class="nav-outer">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-avatar"><img src="assets/avatar.jpg" alt=""></span>
+      <span class="nav-name">DEIN NAME</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="socials.html">Socials</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="tools.html" class="active">Tools</a>
+    </div>
+  </nav>
+</div>
+
+<main class="frame">
+  <div class="wrap">
+    <section class="section no-border centered" style="padding-top:56px;">
+      <p class="section-eyebrow">TOOL</p>
+      <h2>Ess- &amp; <span class="grad">Trainingsplan</span></h2>
+      <p class="lead">Essplan, Tower-Training und Laufplan zum Abhaken. Dein Fortschritt bleibt in diesem Browser gespeichert.</p>
+    </section>
+
+    <section class="section no-border" style="padding-top:0; max-width:760px; margin:0 auto;">
+      <div class="fit-tabs">
+        <button class="fit-tab is-active" data-tab="essen">Essplan</button>
+        <button class="fit-tab" data-tab="tower">Tower</button>
+        <button class="fit-tab" data-tab="laufen">Laufplan</button>
+      </div>
+
+      <div class="fit-progress">
+        <span>Heute erledigt</span>
+        <span class="fit-progress-track"><span class="fit-progress-fill" id="progressFill"></span></span>
+        <span id="progressLabel">0%</span>
+      </div>
+
+      <!-- ESSPLAN -->
+      <div class="fit-panel is-active" data-panel="essen">
+        <div class="fit-group">
+          <h3>Heute</h3>
+          <div class="fit-item" data-id="essen-morgens">
+            <input type="checkbox" class="fit-check" />
+            <span><span class="fit-item-title">Skyr mit Früchten oder More Chunky</span><span class="fit-item-sub">Morgens</span></span>
+            <span></span><span></span>
+          </div>
+          <div class="fit-item" data-id="essen-mittags">
+            <input type="checkbox" class="fit-check" />
+            <span><span class="fit-item-title">Salat oder fettarme, gesunde Mahlzeit</span><span class="fit-item-sub">Mittags — mageres Protein + Vollkorn-Beilage</span></span>
+            <span></span><span></span>
+          </div>
+          <div class="fit-item" data-id="essen-abends">
+            <input type="checkbox" class="fit-check" />
+            <span><span class="fit-item-title">Vollkornnudeln (80–100g) mit Gemüse &amp; Protein</span><span class="fit-item-sub">Abends — Tomatensauce statt Sahnesauce</span></span>
+            <span></span><span></span>
+          </div>
+          <div class="fit-item" data-id="essen-wasser">
+            <input type="checkbox" class="fit-check" />
+            <span><span class="fit-item-title">Wasser als Getränk, Cola Zero nur Ausnahme</span></span>
+            <span></span><span></span>
+          </div>
+          <div class="fit-item" data-id="essen-suess">
+            <input type="checkbox" class="fit-check" />
+            <span><span class="fit-item-title">Keine Süßigkeiten</span></span>
+            <span></span><span></span>
+          </div>
+        </div>
+        <button class="fit-reset" data-reset="essen">Essplan für heute zurücksetzen</button>
+      </div>
+
+      <!-- TOWER -->
+      <div class="fit-panel" data-panel="tower">
+        <div class="fit-group">
+          <h3>Tag A — Zug (Rücken / Bizeps)</h3>
+          <div class="fit-item" data-id="tower-a-klimm"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Klimmzüge</span><span class="fit-item-sets">3 x 6–10</span><span class="fit-item-weight">Körpergewicht</span></div>
+          <div class="fit-item" data-id="tower-a-lat"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabelzug Lat-Pulldown</span><span class="fit-item-sets">3 x 10–12</span><span class="fit-item-weight">5 Platten (22,5kg)</span></div>
+          <div class="fit-item" data-id="tower-a-row"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabelrudern sitzend</span><span class="fit-item-sets">3 x 10–12</span><span class="fit-item-weight">5 Platten (22,5kg)</span></div>
+          <div class="fit-item" data-id="tower-a-curl"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabel-Bizepscurls</span><span class="fit-item-sets">3 x 12</span><span class="fit-item-weight">3 Platten (13,5kg)</span></div>
+          <div class="fit-item" data-id="tower-a-leg"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Hängendes Beinheben</span><span class="fit-item-sets">3 x 10–15</span><span class="fit-item-weight">Körpergewicht</span></div>
+        </div>
+        <div class="fit-group">
+          <h3>Tag B — Druck (Brust / Schulter / Trizeps)</h3>
+          <div class="fit-item" data-id="tower-b-dips"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Dips am Tower</span><span class="fit-item-sets">3 x 6–10</span><span class="fit-item-weight">Körpergewicht</span></div>
+          <div class="fit-item" data-id="tower-b-chest"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabel-Brustpresse / Crossover</span><span class="fit-item-sets">3 x 10–12</span><span class="fit-item-weight">4 Platten (18kg) / Seite</span></div>
+          <div class="fit-item" data-id="tower-b-shoulder"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabel-Schulterdrücken</span><span class="fit-item-sets">3 x 10–12</span><span class="fit-item-weight">3 Platten (13,5kg) / Seite</span></div>
+          <div class="fit-item" data-id="tower-b-tri"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kabel-Trizepsdrücken (Seil)</span><span class="fit-item-sets">3 x 12</span><span class="fit-item-weight">3 Platten (13,5kg)</span></div>
+          <div class="fit-item" data-id="tower-b-plank"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Plank</span><span class="fit-item-sets">3 x 30–45 Sek.</span><span class="fit-item-weight">Körpergewicht</span></div>
+        </div>
+        <div class="fit-group">
+          <h3>Tag C — Beine + Rumpf</h3>
+          <div class="fit-item" data-id="tower-c-squat"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Kniebeugen</span><span class="fit-item-sets">3 x 12–15</span><span class="fit-item-weight">Körpergewicht</span></div>
+          <div class="fit-item" data-id="tower-c-lunge"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Ausfallschritte</span><span class="fit-item-sets">3 x 12 / Bein</span><span class="fit-item-weight">Körpergewicht</span></div>
+          <div class="fit-item" data-id="tower-c-calf"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Wadenheben</span><span class="fit-item-sets">3 x 15–20</span><span class="fit-item-weight">Körpergewicht</span></div>
+          <div class="fit-item" data-id="tower-c-twist"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Russian Twists / Seitplank</span><span class="fit-item-sets">3 x</span><span class="fit-item-weight">Körpergewicht</span></div>
+        </div>
+        <button class="fit-reset" data-reset="tower">Tower-Training zurücksetzen</button>
+      </div>
+
+      <!-- LAUFPLAN -->
+      <div class="fit-panel" data-panel="laufen">
+        <div class="fit-group">
+          <h3>Fortschritt (2x pro Woche)</h3>
+          <div class="fit-item" data-id="lauf-w12"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Woche 1–2</span><span class="fit-item-sets">2,5 km</span><span class="fit-item-weight">Run/Walk 1/2 Min</span></div>
+          <div class="fit-item" data-id="lauf-w34"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Woche 3–4</span><span class="fit-item-sets">3,5 km</span><span class="fit-item-weight">mehr am Stück</span></div>
+          <div class="fit-item" data-id="lauf-w56"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Woche 5–6</span><span class="fit-item-sets">4,5 km</span><span class="fit-item-weight">durchgehend, langsam</span></div>
+          <div class="fit-item" data-id="lauf-w78"><input type="checkbox" class="fit-check" /><span class="fit-item-title">Woche 7–8</span><span class="fit-item-sets">6 km</span><span class="fit-item-weight">durchgehend</span></div>
+        </div>
+        <button class="fit-reset" data-reset="laufen">Laufplan zurücksetzen</button>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a class="btn btn-ghost" href="tools.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Zurück zu Tools
+      </a>
+    </div>
+  </div>
+</main>
+
+<script>
+const STORAGE_KEY = "fitnessplan-checks";
+const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function updateProgress() {
+  const activePanel = document.querySelector(".fit-panel.is-active");
+  const items = activePanel.querySelectorAll(".fit-item");
+  const total = items.length;
+  const done = [...items].filter(i => state[i.dataset.id]).length;
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressLabel").textContent = pct + "%";
+}
+
+document.querySelectorAll(".fit-item").forEach(item => {
+  const id = item.dataset.id;
+  const box = item.querySelector(".fit-check");
+  box.checked = !!state[id];
+  if (box.checked) item.classList.add("is-done");
+  box.addEventListener("change", () => {
+    state[id] = box.checked;
+    item.classList.toggle("is-done", box.checked);
+    saveState();
+    updateProgress();
+  });
+});
+
+document.querySelectorAll(".fit-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".fit-tab").forEach(t => t.classList.remove("is-active"));
+    document.querySelectorAll(".fit-panel").forEach(p => p.classList.remove("is-active"));
+    tab.classList.add("is-active");
+    document.querySelector(`.fit-panel[data-panel="${tab.dataset.tab}"]`).classList.add("is-active");
+    updateProgress();
+  });
+});
+
+document.querySelectorAll("[data-reset]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const prefix = btn.dataset.reset;
+    Object.keys(state).forEach(k => { if (k.startsWith(prefix)) delete state[k]; });
+    saveState();
+    document.querySelectorAll(`.fit-panel[data-panel="${prefix}"] .fit-check`).forEach(box => {
+      box.checked = false;
+      box.closest(".fit-item").classList.remove("is-done");
+    });
+    updateProgress();
+  });
+});
+
+updateProgress();
+</script>
+</body>
+</html>

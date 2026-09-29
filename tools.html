@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tools — DEIN NAME</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-bg">
+  <img class="bg-gif" src="assets/background.gif" alt="" />
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="scrim"></div>
+</div>
+<audio id="bgSound" src="assets/sound.mp3" loop></audio>
+<button id="soundToggle" class="sound-btn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  <span class="sound-label">Sound anmachen</span>
+</button>
+<div class="nav-outer">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-avatar"><img src="assets/avatar.jpg" alt=""></span>
+      <span class="nav-name">DEIN NAME</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="socials.html">Socials</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="tools.html" class="active locked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Tools</a>
+    </div>
+  </nav>
+</div>
+<main class="frame">
+  <div class="wrap">
+    <section class="section no-border centered" style="padding-top:56px;">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+      </div>
+      <p class="section-eyebrow">TOOLS</p>
+      <h2>Meine <span class="grad">Tools</span></h2>
+      <p class="lead">Hier findest du meine Tools für QR-Codes und das Teilen von Dateien über kurze Links.</p>
+    </section>
+
+    <section class="section no-border" style="padding-top:0;">
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5"/><path d="m17.5 6.5-11 11"/><path d="M4 9V4h5"/><path d="M20 15v5h-5"/></svg>
+            </span>
+            <a class="icon-box-btn" href="fitnessplan.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <h3>Ess- &amp; Trainingsplan</h3>
+          <p>Essplan, Tower-Training und Laufplan zum Abhaken — dein Fortschritt bleibt im Browser gespeichert.</p>
+          <div class="tag-row">
+            <span class="tag-pill">Essplan</span>
+            <span class="tag-pill">Training</span>
+            <span class="tag-pill">Laufen</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3z"/><path d="M18 14h3v3"/><path d="M14 18h3v3"/><path d="M18 18h3v3"/></svg>
+            </span>
+            <a class="icon-box-btn" href="login.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <h3>Link → QR-Code</h3>
+          <p>Verwandle einen beliebigen Link schnell und einfach in einen QR-Code.</p>
+          <div class="tag-row">
+            <span class="tag-pill">Link</span>
+            <span class="tag-pill">QR-Code</span>
+          </div>
+          <div class="lock-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Zugang erforderlich
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </span>
+            <a class="icon-box-btn" href="login.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <h3>MP3 / WAV → Link</h3>
+          <p>Lade eine MP3- oder WAV-Datei hoch und erhalte einen kurzen Link zum Teilen.</p>
+          <div class="tag-row">
+            <span class="tag-pill">MP3</span>
+            <span class="tag-pill">WAV</span>
+            <span class="tag-pill">Short Link</span>
+          </div>
+          <div class="lock-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Zugang erforderlich
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </span>
+            <a class="icon-box-btn" href="login.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <h3>Bilder / Videos / GIF → Link</h3>
+          <p>Lade Bilder, Videos oder GIFs hoch und erhalte einen kurzen Link zum Teilen.</p>
+          <div class="tag-row">
+            <span class="tag-pill">Bilder</span>
+            <span class="tag-pill">Videos</span>
+            <span class="tag-pill">GIF</span>
+          </div>
+          <div class="lock-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Zugang erforderlich
+          </div>
+        </article>
+      </div>
+
+      <div class="notice-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Für die Nutzung eines Tools ist eine Anmeldung erforderlich.
+      </div>
+
+      <div class="back-wrap">
+        <a class="btn btn-ghost" href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Zurück zur Startseite
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
