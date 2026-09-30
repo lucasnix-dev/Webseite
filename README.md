@@ -1,7 +1,6 @@
 # Persönliche Seite — Discord-Moderator / Communities
 
-Visuell an zsimonn.de angelehnt (Farben jetzt komplett auf Lila/Violett
-umgestellt): Home, Projekte, Socials, Kontakt, Tools — mit GIF-Hintergrund,
+Home, Projekte, Socials, Kontakt, Tools — mit GIF-Hintergrund,
 Sound-Button, Profil-Card mit Live-Discord- und Live-Spotify-Status, und
 einem Communities-Bereich für Server, in denen du Mod/Admin bist.
 
