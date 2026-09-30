@@ -68,6 +68,11 @@ export default async function handler(req, res) {
     const recentRes = await fetch(RECENTLY_PLAYED_ENDPOINT, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
+
+    if (!recentRes.ok) {
+      return res.status(200).json({ isPlaying: false, error: `recently_played_failed_${recentRes.status}` });
+    }
+
     const recent = await recentRes.json();
     const track = recent.items?.[0]?.track;
 
