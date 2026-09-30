@@ -1,4 +1,6 @@
 // ---- CONFIG -------------------------------------------------------
+// Deine Discord User-ID (Entwicklermodus an -> Rechtsklick auf deinen
+// Namen -> "ID kopieren"). Wird für das Discord-Widget gebraucht.
 const DISCORD_USER_ID = "1102693369286774814";
 // ---------------------------------------------------------------------
 
@@ -32,14 +34,19 @@ async function loadSpotify() {
     const res = await fetch("/api/spotify");
     const data = await res.json();
 
-    if (!data.isPlaying) {
+    if (!data.title) {
       value.textContent = "Gerade nichts aktiv";
       value.className = "status-value val-offline";
       return;
     }
 
-    value.className = "status-value val-active";
-    value.textContent = `${data.title} — ${data.artist}`;
+    if (data.isPlaying) {
+      value.className = "status-value val-active";
+      value.textContent = `${data.title} — ${data.artist}`;
+    } else {
+      value.className = "status-value val-offline";
+      value.textContent = `Zuletzt: ${data.title} — ${data.artist}`;
+    }
   } catch (e) {
     value.textContent = "Nicht erreichbar";
     value.className = "status-value val-offline";
