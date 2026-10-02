@@ -547,8 +547,10 @@ a:focus-visible, button:focus-visible {
 
 .fit-item {
   display: grid;
-  grid-template-columns: 22px 1.3fr 0.5fr 0.9fr;
-  gap: 14px;
+  grid-template-columns: 22px 1.3fr auto auto;
+  grid-template-areas: "check title sets weight";
+  column-gap: 14px;
+  row-gap: 2px;
   align-items: center;
   padding: 12px 14px;
   border: 1px solid var(--line-soft);
@@ -558,9 +560,23 @@ a:focus-visible, button:focus-visible {
 }
 .fit-item.is-done { opacity: 0.5; }
 .fit-item.is-done .fit-item-title { text-decoration: line-through; }
+.fit-check { grid-area: check; }
+.fit-item-title { grid-area: title; min-width: 0; }
+.fit-item-sets { grid-area: sets; white-space: nowrap; text-align: right; }
+.fit-item-weight { grid-area: weight; white-space: nowrap; text-align: right; }
 @media (max-width: 700px) {
-  .fit-item { grid-template-columns: 22px 1fr; }
-  .fit-item-sets, .fit-item-weight { grid-column: 2; font-size: 0.8rem; }
+  .fit-item {
+    grid-template-columns: 22px 1fr;
+    grid-template-areas:
+      "check title"
+      "check sets"
+      "check weight";
+  }
+  .fit-item-sets, .fit-item-weight {
+    font-size: 0.8rem;
+    white-space: normal;
+    text-align: left;
+  }
 }
 
 .fit-check {
@@ -593,3 +609,12 @@ a:focus-visible, button:focus-visible {
   padding: 0; margin-top: 6px;
 }
 .fit-reset:hover { color: var(--accent-text); }
+
+.fit-phase-meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
