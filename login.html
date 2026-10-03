@@ -26,9 +26,9 @@
       </span>
       <h1>Anmelden</h1>
       <p class="lead">Bitte melde dich an, um dieses Tool zu nutzen.</p>
-      <input class="field" type="text" placeholder="Benutzername" />
-      <input class="field" type="password" placeholder="Passwort" />
-      <button class="btn btn-grad btn-wide" type="button">
+      <input class="field" type="password" id="passwordField" placeholder="Passwort" autocomplete="current-password" />
+      <p id="loginError" style="color:#ED4245; font-size:0.85rem; margin:-6px 0 12px; display:none;">Falsches Passwort.</p>
+      <button class="btn btn-grad btn-wide" type="button" id="loginBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
         Anmelden
       </button>
@@ -36,6 +36,40 @@
     </div>
   </div>
 </main>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const redirectTo = params.get("redirect") || "tools.html";
+
+const btn = document.getElementById("loginBtn");
+const field = document.getElementById("passwordField");
+const error = document.getElementById("loginError");
+
+async function doLogin() {
+  error.style.display = "none";
+  const password = field.value;
+  if (!password) return;
+  try {
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      window.location.href = redirectTo;
+    } else {
+      error.style.display = "block";
+    }
+  } catch (e) {
+    error.textContent = "Nicht erreichbar — später nochmal versuchen.";
+    error.style.display = "block";
+  }
+}
+
+btn.addEventListener("click", doLogin);
+field.addEventListener("keydown", (e) => { if (e.key === "Enter") doLogin(); });
+</script>
 
 </body>
 </html>
