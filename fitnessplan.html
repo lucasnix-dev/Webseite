@@ -142,11 +142,17 @@
 </main>
 
 <script>
-const STORAGE_KEY = "fitnessplan-checks";
-const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+let state = {};
+let saveTimer = null;
 
-function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+function applyStateToDOM() {
+  document.querySelectorAll(".fit-item").forEach(item => {
+    const id = item.dataset.id;
+    const box = item.querySelector(".fit-check");
+    box.checked = !!state[id];
+    item.classList.toggle("is-done", box.checked);
+  });
+  updateProgress();
 }
 
 function updateProgress() {
@@ -159,16 +165,45 @@ function updateProgress() {
   document.getElementById("progressLabel").textContent = pct + "%";
 }
 
+// Debounced save, so rapid clicks don't fire a request each
+function queueSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      await fetch("/api/checklist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(state),
+      });
+    } catch (e) {
+      console.error("Speichern fehlgeschlagen", e);
+    }
+  }, 400);
+}
+
+async function loadState() {
+  try {
+    const res = await fetch("/api/checklist");
+    if (res.status === 401) {
+      window.location.href = "login.html?redirect=fitnessplan.html";
+      return;
+    }
+    state = await res.json();
+  } catch (e) {
+    console.error("Laden fehlgeschlagen", e);
+    state = {};
+  }
+  applyStateToDOM();
+}
+
 document.querySelectorAll(".fit-item").forEach(item => {
   const id = item.dataset.id;
   const box = item.querySelector(".fit-check");
-  box.checked = !!state[id];
-  if (box.checked) item.classList.add("is-done");
   box.addEventListener("change", () => {
     state[id] = box.checked;
     item.classList.toggle("is-done", box.checked);
-    saveState();
     updateProgress();
+    queueSave();
   });
 });
 
@@ -186,7 +221,6 @@ document.querySelectorAll("[data-reset]").forEach(btn => {
   btn.addEventListener("click", () => {
     const prefix = btn.dataset.reset;
     Object.keys(state).forEach(k => { if (k.startsWith(prefix)) delete state[k]; });
-    saveState();
     document.querySelectorAll(`.fit-panel[data-panel] .fit-check`).forEach(box => {
       const item = box.closest(".fit-item");
       if (item.dataset.id.startsWith(prefix)) {
@@ -195,6 +229,7 @@ document.querySelectorAll("[data-reset]").forEach(btn => {
       }
     });
     updateProgress();
+    queueSave();
   });
 });
 
@@ -204,7 +239,7 @@ const defaultPanel = document.querySelector('.fit-panel[data-panel="phase1"]');
 defaultTab.classList.add("is-active");
 defaultPanel.classList.add("is-active");
 
-updateProgress();
+loadState();
 </script>
 </body>
 </html>
